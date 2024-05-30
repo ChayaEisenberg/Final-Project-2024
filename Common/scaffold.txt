@@ -1,0 +1,5 @@
+
+
+Scaffold-DbContext 'Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="C:\Users\אייזנברג חיה\Desktop\Project\DB\Data.mdf";Integrated Security=True;Connect Timeout=30' Microsoft.EntityFrameworkCore.SqlServer –Context FoodFactoryContext -OutputDir Models  -Force -NoOnConfiguring
+
+Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="C:\Users\אייזנברג חיה\Desktop\Project\DB\Data.mdf";Integrated Security=True;Connect Timeout=30
