@@ -24,5 +24,15 @@ namespace פרוייקט_סופי.controllers
             return userService.GetAllUsers();
 
         }
+        [HttpGet("{email}")]
+        public User GetUserByEmail(string email)
+        {
+            return userService.GetUserByEmail(email);
+        }
+        [HttpPut]
+        public User UpdateUser(string email, UserDTO user)
+        {
+            return userService.UpdateUser(email, user);
+        }
     }
 }
