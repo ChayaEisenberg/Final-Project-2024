@@ -29,10 +29,19 @@ namespace פרוייקט_סופי.controllers
         {
             return userService.GetUserByEmail(email);
         }
-        [HttpPut]
+        [HttpPut("{email}")]
         public User UpdateUser(string email, UserDTO user)
         {
             return userService.UpdateUser(email, user);
+        }
+        [HttpPost]
+        public User AddUser(UserDTO user) { 
+            return userService.AddUser(user);
+        }
+        [HttpDelete("{email}")]
+        public bool DeleteUser(string email)
+        {
+            return userService.DeleteUser(email);
         }
     }
 }

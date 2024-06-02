@@ -73,8 +73,6 @@ namespace BL.Implementation
             u.PhoneNumber = user.PhoneNumber;
             userRepo.UpdateUser(email, u);
             return u;
-        }
-
-     
+        }   
     }
 }
