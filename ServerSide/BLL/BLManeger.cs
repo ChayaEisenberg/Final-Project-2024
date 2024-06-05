@@ -10,8 +10,8 @@ namespace BL
     {
         //public AddressDTO Address { get; }
         //public DriveDTO Drive { get; }
-        public UserService User { get; }
-
+        public UserService user { get; }
+        public DriveService drive { get; }
 
         public BLManeger(string connString)
         {
@@ -19,12 +19,12 @@ namespace BL
             service.AddScoped<DalManeger>(d => new DalManeger(connString));
             service.AddScoped<IUserService, UserService>();
             //service.AddScoped<AddressDTO>();
-            //service.AddScoped<DriveDTO>();
+            service.AddScoped<IDriveService, DriveService>();
 
             ServiceProvider serviceProvider = service.BuildServiceProvider();
             //Address = serviceProvider.GetService<AddressDTO>();
-            //Drive = serviceProvider.GetService<DriveDTO>();
-            User = (UserService)serviceProvider.GetService<IUserService>();
+            drive = (DriveService)serviceProvider.GetService<IDriveService>();
+            user = (UserService)serviceProvider.GetService<IUserService>();
 
         }
     }

@@ -18,7 +18,7 @@ namespace BL.Implementation
         UserRepo userRepo; 
         public UserService(DalManeger dalManeger)
         {
-            this.userRepo = dalManeger.UserRepo;
+            this.userRepo = dalManeger.userRepo;
         }
 
         public User AddUser(UserDTO user)

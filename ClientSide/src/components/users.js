@@ -13,7 +13,7 @@ const Fetch = () => {
       });
   }, []);
   return (
-    users.map(user => (<div>: {user.email}</div>))
+    users.map(user => (<div>{user.userName}: {user.email}</div>))
   );
 };
 export default Fetch;

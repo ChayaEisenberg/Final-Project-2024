@@ -16,7 +16,7 @@ namespace פרוייקט_סופי.controllers
         UserService userService;
         public UsersController(BLManeger blManeger)
         {
-            this.userService = blManeger.User;
+            this.userService = blManeger.user;
         }
         [HttpGet]
         public List<User> GetAll()
