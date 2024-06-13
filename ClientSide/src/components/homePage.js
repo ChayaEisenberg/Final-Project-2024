@@ -3,12 +3,18 @@ import Drives from './drives/drives'
 import NewDrive from './drives/newDrive'
 
 export default function HomePage() {
+  const drives = () => {
+    <Drives></Drives>;
+  }
   return (
     <div>HomePage
-        {/* <Drives></Drives> */}
+        <br></br>
+        {/* <button onClick={() =><Drives></Drives>}>Show drives</button> */}
+        {/* <button onClick={drives}>Show drives</button> */}
+        <Drives></Drives>
         <NewDrive></NewDrive>
+        
     </div>
     
-
   )
 }
