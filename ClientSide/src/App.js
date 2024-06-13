@@ -12,7 +12,7 @@ function App() {
       <header className="App-header">
 
       <HomePage></HomePage>
-      <Users></Users>
+      
        
       </header>
     </div>
