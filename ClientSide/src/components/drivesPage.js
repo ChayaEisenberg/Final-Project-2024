@@ -2,7 +2,7 @@ import React from 'react'
 import Drives from './drives/drives'
 import NewDrive from './drives/newDrive'
 
-export default function HomePage() {
+export default function DrivesPage() {
   const drives = () => {
     <Drives></Drives>;
   }
@@ -11,8 +11,8 @@ export default function HomePage() {
         <br></br>
         {/* <button onClick={() =><Drives></Drives>}>Show drives</button> */}
         {/* <button onClick={drives}>Show drives</button> */}
-        {/* <Drives></Drives> */}
-        <NewDrive></NewDrive>
+        <Drives></Drives>
+        {/* <NewDrive></NewDrive> */}
         
     </div>
     
