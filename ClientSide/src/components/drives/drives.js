@@ -14,7 +14,7 @@ export default function Drives() {
       });
   }, []);
   return (
-    drives.map(drive => (<div>starting Point:{drive.startingPoint}, destination Point:{drive.destinationPoint}</div>))
+drives.map(drive => (<div>From:{drive.startingPoint}   To:{drive.destinationPoint}  ,{drive.carOwner}, {drive.numberOfPassengers}</div>))
   );
 };
 

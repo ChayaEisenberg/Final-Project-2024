@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+
+
+
+
+.form-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.form-container label {
+  font-weight: bold;
+}
+
+.form-container button {
+  margin-top: 10px;
+}
