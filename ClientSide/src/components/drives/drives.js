@@ -53,6 +53,7 @@ export default function Drives() {
             <p><strong>To:</strong> {selectedDrive.destinationPoint}</p>
             <p><strong>Car Owner:</strong> {selectedDrive.carOwner}</p>
             <p><strong>Passengers:</strong> {selectedDrive.numberOfPassengers}</p>
+            
             {/* Add more details as needed */}
           </Modal.Body>
         )}

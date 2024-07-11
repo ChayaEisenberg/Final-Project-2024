@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -27,19 +26,20 @@ export default function SignUp() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const newDrive = {
+        const newUser = {
             userName: form.userName,
             password: form.password,
             firstName: form.firstName,
             lastName: form.lastName,
-            carOwner: form.carOwner,
-            carOwnerNavigation: null,
-            destinationPointNavigation: null,
-            startingPointNavigation: null,
+            adressId: form.adressId,
+            email: form.email,
+            phoneNumber: form.phoneNumber,
+            aboutMe: form.aboutMe,
+            points: form.points,
         };
 
         try {
-            const response = await axios.post('http://localhost:5055/api/drives', newDrive);
+            const response = await axios.post('http://localhost:5055/api/users', newUser);
             console.log('Form data submitted:', response.data);
         } catch (error) {
             console.error('There was an error submitting the form!', error);
@@ -50,28 +50,43 @@ export default function SignUp() {
         <div className="form-container">
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label htmlFor="startingPoint">Starting Point:</label>
-                    <input type="text" className="form-control" id="startingPoint" name="startingPoint" value={form.startingPoint} onChange={handleChange} />
+                    <label htmlFor="userName">User Name:</label>
+                    <input type="text" className="form-control" id="userName" name="userName" value={form.userName} onChange={handleChange} />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="destinationPoint">Destination Point:</label>
-                    <input type="text" className="form-control" id="destinationPoint" name="destinationPoint" value={form.destinationPoint} onChange={handleChange} />
+                    <label htmlFor="password">Password:</label>
+                    <input type="password" className="form-control" id="password" name="password" value={form.password} onChange={handleChange} />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="numberOfPassengers">Number of Passengers:</label>
-                    <input type="number" className="form-control" id="numberOfPassengers" name="numberOfPassengers" value={form.numberOfPassengers} onChange=
-                    {handleChange} />
-                    </div>
-                    <div className="form-group form-check">
-                        <input type="checkbox" className="form-check-input" id="oneTimePermanent" name="oneTimePermanent" checked={form.oneTimePermanent} onChange={handleChange} />
-                        <label className="form-check-label" htmlFor="oneTimePermanent">One Time Permanent</label>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="carOwner">Car Owner:</label>
-                        <input type="text" className="form-control" id="carOwner" name="carOwner" value={form.carOwner} onChange={handleChange} />
-                    </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
-                </form>
-            </div>
-        );
-    }
+                    <label htmlFor="firstName">First Name:</label>
+                    <input type="text" className="form-control" id="firstName" name="firstName" value={form.firstName} onChange={handleChange} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="lastName">Last Name:</label>
+                    <input type="text" className="form-control" id="lastName" name="lastName" value={form.lastName} onChange={handleChange} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="adressId">Address ID:</label>
+                    <input type="number" className="form-control" id="adressId" name="adressId" value={form.adressId} onChange={handleChange} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="email">Email:</label>
+                    <input type="email" className="form-control" id="email" name="email" value={form.email} onChange={handleChange} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="phoneNumber">Phone Number:</label>
+                    <input type="tel" className="form-control" id="phoneNumber" name="phoneNumber" value={form.phoneNumber} onChange={handleChange} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="aboutMe">About Me:</label>
+                    <textarea className="form-control" id="aboutMe" name="aboutMe" value={form.aboutMe} onChange={handleChange}></textarea>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="points">Points:</label>
+                    <input type="number" className="form-control" id="points" name="points" value={form.points} onChange={handleChange} readOnly />
+                </div>
+                <button type="submit" className="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    );
+}
