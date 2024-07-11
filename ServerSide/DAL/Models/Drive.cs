@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace DAL.Models;
 
@@ -20,6 +21,6 @@ public partial class Drive
     public virtual User CarOwnerNavigation { get; set; } = null!;
 
     public virtual Address DestinationPointNavigation { get; set; } = null!;
-
+    
     public virtual Address StartingPointNavigation { get; set; } = null!;
 }

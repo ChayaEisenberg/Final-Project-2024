@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace DAL.Models;
 
@@ -22,6 +23,6 @@ public partial class User
     public string? AboutMe { get; set; }
 
     public string? Points { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<Drive> Drives { get; set; } = new List<Drive>();
 }

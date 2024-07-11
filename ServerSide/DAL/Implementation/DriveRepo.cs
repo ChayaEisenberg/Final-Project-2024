@@ -1,5 +1,6 @@
 ﻿using DAL.Api;
 using DAL.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +43,11 @@ namespace DAL.Implementation
 
         public List<Drive> GetAllDrives()
         {
-            return context.Drives.ToList();
+            return context.Drives
+                .Include(drive => drive.DestinationPointNavigation)
+                .Include(d => d.StartingPointNavigation)
+                .Include(d => d.CarOwnerNavigation)
+                .ToList();
         }
 
 
