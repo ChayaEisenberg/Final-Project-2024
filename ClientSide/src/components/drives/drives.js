@@ -32,7 +32,7 @@ export default function Drives() {
       {drives.map((drive) => (
         <Card key={drive.id} style={{ width: '18rem', margin: '10px' }}>
           <Card.Body>
-            <Card.Title>From: {drive.StartingPointNavigation.city} To: {drive.destinationPoint}</Card.Title>
+            <Card.Title>From: {drive.startingPointNavigation.city} To: {drive.destinationPointNavigation.city}</Card.Title>
             <Card.Text>
               <strong>Passengers:</strong> {drive.numberOfPassengers}
             </Card.Text>
@@ -49,9 +49,9 @@ export default function Drives() {
         </Modal.Header>
         {selectedDrive && (
           <Modal.Body>
-            <p><strong>From:</strong> {selectedDrive.StartingPointNavigation.city}</p>
-            <p><strong>To:</strong> {selectedDrive.destinationPoint}</p>
-            <p><strong>Car Owner:</strong> {selectedDrive.carOwner}</p>
+            <p><strong>From:</strong> {selectedDrive.startingPointNavigation.street}, {selectedDrive.startingPointNavigation.city}</p>
+            <p><strong>To:</strong> {selectedDrive.destinationPointNavigation.street}, {selectedDrive.destinationPointNavigation.city}</p>
+            <p><strong>Car Owner:</strong> {selectedDrive.carOwnerNavigation.firstName} {selectedDrive.carOwnerNavigation.lastName}</p>
             <p><strong>Passengers:</strong> {selectedDrive.numberOfPassengers}</p>
             {/* Add more details as needed */}
           </Modal.Body>

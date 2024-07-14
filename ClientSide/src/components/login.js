@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import '../App.css';
-import HomePage from './homePage';
 
 export default function Login() {
   const [form, setForm] = useState({
@@ -10,6 +10,8 @@ export default function Login() {
     password: '',
     email: '',
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,6 +37,10 @@ export default function Login() {
       console.error('There was an error submitting the login form!', error);
       // Handle login error here
     }
+  };
+
+  const handleSignUpRedirect = () => {
+    navigate('/signup');
   };
 
   return (
@@ -75,9 +81,7 @@ export default function Login() {
         </div>
         <button type="submit" className="btn btn-primary">Submit</button>
         <span> </span>
-        {/* <button onClick={HomePage} className='btn btn-primary'>Sign Up</button> */}
-        <button className='btn btn-primary'>Sign Up</button>
-
+        <button type="button" onClick={handleSignUpRedirect} className='btn btn-primary'>Sign Up</button>
       </form>
     </div>
   );
