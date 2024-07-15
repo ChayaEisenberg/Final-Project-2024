@@ -53,25 +53,25 @@ namespace DAL.Implementation
 
 
 
-        public User UpdateUser(string email, User user)
+        public User UpdateDrive(string email, User user)
         {
-            foreach (var item in context.Users)
-            {
-                if (item.Email == email)
-                {
+            //foreach (var item in context.Users)
+            //{
+            //    if (item.Email == email)
+            //    {
 
-                    item.UserName = user.UserName;
-                    item.AboutMe = user.AboutMe;
-                    item.AddressId = user.AddressId;
-                    item.Points = user.Points;
-                    item.Email = email;
-                    item.Drives = user.Drives;
-                    item.FirstName = user.FirstName;
-                    item.LastName = user.LastName;
-                    item.Password = user.Password;
+            //        item.UserName = user.UserName;
+            //        item.AboutMe = user.AboutMe;
+            //        item.AddressId = user.AddressId;
+            //        item.Points = user.Points;
+            //        item.Email = email;
+            //        item.Drives = user.Drives;
+            //        item.FirstName = user.FirstName;
+            //        item.LastName = user.LastName;
+            //        item.Password = user.Password;
 
-                }
-            }
+            //    }
+            //}
             context.SaveChanges();
             return user;
         }

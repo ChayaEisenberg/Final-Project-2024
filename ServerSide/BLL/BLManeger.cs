@@ -13,16 +13,17 @@ namespace BL
         public UserService user { get; }
         public DriveService drive { get; }
 
+        public AddressService address { get; }
         public BLManeger(string connString)
         {
             ServiceCollection service = new();
             service.AddScoped<DalManeger>(d => new DalManeger(connString));
             service.AddScoped<IUserService, UserService>();
-            //service.AddScoped<AddressDTO>();
+            service.AddScoped<IAddressService, AddressService>();
             service.AddScoped<IDriveService, DriveService>();
 
             ServiceProvider serviceProvider = service.BuildServiceProvider();
-            //Address = serviceProvider.GetService<AddressDTO>();
+            address = (AddressService)serviceProvider.GetService<IAddressService>();
             drive = (DriveService)serviceProvider.GetService<IDriveService>();
             user = (UserService)serviceProvider.GetService<IUserService>();
 

@@ -16,7 +16,7 @@ namespace DAL
 
         public UserRepo userRepo { get; set; }
         public DriveRepo driveRepo { get; set; }
-        //public AddressRepo AddressRepo { get; set; }
+        public AddressRepo addressRepo { get; set; }
         public DalManeger(string connstring)
         {
             ServiceCollection services = new();
@@ -25,12 +25,13 @@ namespace DAL
             services.AddDbContext<CarsContext>(options => options.UseSqlServer(connstring));
             services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<IDriveRepo, DriveRepo>();
+            services.AddScoped<IAddressRepo, AddressRepo>();
 
 
             ServiceProvider serviceProvider = services.BuildServiceProvider();
             userRepo = (UserRepo)serviceProvider.GetService<IUserRepo>();
             driveRepo = (DriveRepo)serviceProvider.GetService<IDriveRepo>();
-            //AddressRepo = serviceProvider.GetService<AddressRepo>();
+            addressRepo = (AddressRepo)serviceProvider.GetService<IAddressRepo>();
 
 
 
