@@ -39,24 +39,66 @@
 
 
 
-
-
-
-
-
-.form-container {
-  max-width: 600px;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #f9f9f9;
+.card-custom {
+  background-color: rgb(187, 255, 183);
+  color: rgb(158, 74, 255);
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px;
 }
 
-.form-container label {
+.card-custom .card-header, .card-custom .card-footer {
+  background-color: white;
+}
+
+.card-custom .person-icon {
+  position: absolute;
+  top: 25;
+  left: 25px;
+  border-radius: 50%;
+  color: rgb(158, 74, 255);
+  background-color: white;
+  padding: 5px;
+}
+
+.card-custom .contact-button {
+  background-color: white;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  border-radius: 15px;
+  border-color: white;
+  display: flex;
+  align-items: center;
+  color: rgb(158, 74, 255);
   font-weight: bold;
+  
 }
 
-.form-container button {
+.card-custom .contact-button i {
+  margin-right: 5px;
+}
+
+.card-custom .driver-info {
+  color: rgb(158, 74, 255);
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.card-custom .location-icons {
+  display: flex;
+  justify-content: space-around;
+  color: rgb(158, 74, 255);
+  align-items: center;
   margin-top: 10px;
+  background-color: white;
+  height: 40%;
+  width: 100%;
+}
+
+.card-custom .location-icons i {
+  margin-right: 5px;
 }
