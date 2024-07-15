@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -21,7 +22,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #FFFFFF;
 }
 
 .App-link {
@@ -37,42 +38,40 @@
   }
 }
 
-
-
 .card-custom {
-  background-color: rgb(187, 255, 183);
-  color: rgb(158, 74, 255);
+  background-color: #D9FFCC;
+  color: #8518FF;
   border-radius: 15px;
   padding: 10px;
   margin: 10px;
+  position: relative;
 }
 
 .card-custom .card-header, .card-custom .card-footer {
-  background-color: white;
+  background-color: #FFFFFF;
 }
 
 .card-custom .person-icon {
   position: absolute;
-  top: 25;
-  left: 25px;
+  top: 10px;
+  left: 10px;
   border-radius: 50%;
-  color: rgb(158, 74, 255);
-  background-color: white;
+  color: #8518FF;
+  background-color: #FFFFFF;
   padding: 5px;
 }
 
 .card-custom .contact-button {
-  background-color: white;
+  background-color: #FFFFFF;
   position: absolute;
-  top: 25px;
-  right: 25px;
-  border-radius: 15px;
-  border-color: white;
+  top: 10px;
+  right: 10px;
+  border-radius: 50px !important;
+  border-color: #FFFFFF;
   display: flex;
   align-items: center;
-  color: rgb(158, 74, 255);
+  color: #8518FF;
   font-weight: bold;
-  
 }
 
 .card-custom .contact-button i {
@@ -80,25 +79,89 @@
 }
 
 .card-custom .driver-info {
-  color: rgb(158, 74, 255);
+  color: #8518FF;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-
 .card-custom .location-icons {
   display: flex;
   justify-content: space-around;
-  color: rgb(158, 74, 255);
+  color: #8518FF;
   align-items: center;
   margin-top: 10px;
-  background-color: white;
+  background-color: #FFFFFF;
   height: 40%;
   width: 100%;
 }
 
 .card-custom .location-icons i {
   margin-right: 5px;
+}
+
+.contact-button:hover {
+  background-color: #8518FF !important;
+  color: #FFFFFF !important;
+}
+
+.search-input {
+  background-color: #D9FFCC;
+  width: 50%;
+  padding: 10px;
+  border: none;
+  /* border-radius: 5px; */
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+.search-input::placeholder {
+  color: #8518FF;
+  font-weight: bold;
+  opacity: 1;
+}
+
+.publish-button {
+  background-color: #8518FF !important;
+  border-radius: 50px !important;
+  border-color: #8518FF !important;
+  border-width: 3px !important;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF !important;
+  font-weight: bold;
+}
+
+.publish-button i {
+  margin-right: 5px;
+}
+
+.publish-button:hover {
+  background-color: #FFFFFF !important;
+  color: #8518FF !important;
+}
+
+
+.custom-navbar {
+  background-color: #FFFFFF !important;
+  padding: 20px; /* להגדיל את הפדינג של ה-Navbar */
+  font-size: 1.5em; /* להגדיל את גודל הפונט */
+}
+
+.nav-link-custom {
+  background-color: #D9FFCC !important;
+  color: #8518FF !important;
+  padding: 10px 15px; /* להגדיל את הפדינג של הקישורים */
+  /* margin: 50px; */
+  border-radius: 30px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em; /* להגדיל את גודל הפונט */
+}
+
+.nav-link-custom:hover {
+  background-color: #8518FF !important;
+  color: #FFFFFF !important;
 }

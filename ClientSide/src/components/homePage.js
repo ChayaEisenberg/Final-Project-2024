@@ -1,7 +1,10 @@
+
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Drives from './drives/drives';
-import { Card, Button, Modal } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import { FaCar } from 'react-icons/fa';
 import '../App.css';
 
 export default function HomePage() {
@@ -12,10 +15,18 @@ export default function HomePage() {
   };
 
   return (
-    <div>
+    <div className="home-page">
       <br />
-      {/* <button variant="primary" onClick={handleNewDriveClick} className="contact-button">Create New Drive</button> */}
-      <Button variant="primary" className="contact-button" onClick={handleNewDriveClick}>contact</Button>
+      <Button variant="primary" className="publish-button" onClick={handleNewDriveClick}>
+        <FaCar />  publish your trip
+      </Button>
+      <br></br>
+      <br></br>
+      <input
+        type="text"
+        className="search-input"
+        placeholder="What are you looking for?"
+      />
       <Drives />
     </div>
   );
