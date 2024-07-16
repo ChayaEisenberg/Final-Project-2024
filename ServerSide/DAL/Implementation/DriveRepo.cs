@@ -1,5 +1,7 @@
-﻿using DAL.Api;
+﻿using Common;
+using DAL.Api;
 using DAL.Models;
+using DataAccessLayer;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -39,16 +41,16 @@ namespace DAL.Implementation
         }
 
 
-        public List<Drive> GetAllDrives()
+        public PagedList<Drive> GetAllDrives(BaseQueryParams queryParams)
         {
-            return context.Drives
+            var queryable = context.Drives.AsQueryable()
+                .Where(d => d.NumberOfPassengers >= queryParams.Passengers)
                 .Include(drive => drive.DestinationPointNavigation)
                 .Include(d => d.StartingPointNavigation)
-                .Include(d => d.CarOwnerNavigation)
-                .ToList();
+                .Include(d => d.CarOwnerNavigation);
+            return PagedList<Drive>
+                .ToPagedList(queryable, queryParams.PageNumber, queryParams.PageSize);
         }
-
-
 
 
         public User UpdateDrive(string email, User user)

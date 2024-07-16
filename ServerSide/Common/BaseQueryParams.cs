@@ -9,6 +9,9 @@ namespace Common
     public class BaseQueryParams
     {
         const int MAX_PAGE_SIZE = 50;
+
+        const int passengers = 1;
+        public int Passengers { get; set; } = 1;
         public int PageNumber { get; set; } = 1;
         private int pageSize = 15;
         public int PageSize
