@@ -1,4 +1,6 @@
-﻿using DAL.Models;
+﻿using Common;
+using DAL.Models;
+using DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +11,7 @@ namespace DAL.Api
 {
     public interface IDriveRepo
     {
-        List<Drive> GetAllDrives();
+        PagedList<Drive> GetAllDrives(BaseQueryParams queryParams);
         //Drive GetUserByEmail(string email);
         Drive AddDrive(Drive drive);
         bool DeleteDrive(int id);

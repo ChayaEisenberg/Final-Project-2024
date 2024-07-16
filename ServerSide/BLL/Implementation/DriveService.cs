@@ -1,9 +1,11 @@
 ﻿using BL.Api;
 using BL.DTO;
+using Common;
 using DAL;
 using DAL.Api;
 using DAL.Implementation;
 using DAL.Models;
+using DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,9 +41,9 @@ namespace BL.Implementation
         }
 
 
-        public List<Drive> GetAllDrives()
+        public PagedList<Drive> GetAllDrives(BaseQueryParams queryParams)
         {
-            return driveRepo.GetAllDrives();
+            return driveRepo.GetAllDrives(queryParams);
         }
 
         public Drive UpdateDrive(int id, Drive drive)

@@ -1,5 +1,7 @@
 ﻿using BL.DTO;
+using Common;
 using DAL.Models;
+using DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +12,7 @@ namespace BL.Api
 {
     public interface IDriveService
     {
-        List<Drive> GetAllDrives();
+        PagedList<Drive> GetAllDrives(BaseQueryParams queryParams);
         //Drive GetUserByEmail(string email);
         Drive AddDrive(Drive drive);
         bool DeleteDrive(int id);
