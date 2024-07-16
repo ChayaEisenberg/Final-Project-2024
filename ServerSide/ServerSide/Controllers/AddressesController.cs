@@ -24,12 +24,12 @@ namespace פרוייקט_סופי.controllers
             return addresseservice.GetAllAddresses();
 
         }
-        [HttpGet("{email}")]
+        [HttpGet("{id}")]
         public Address GetAddressById(int id)
         {
             return addresseservice.GetAddressById(id);
         }
-        [HttpPut("{email}")]
+        [HttpPut("{id}")]
         public Address UpdateAddress(int id, AddressDTO Address)
         {
             return addresseservice.UpdateAddress(id, Address);
@@ -38,7 +38,7 @@ namespace פרוייקט_סופי.controllers
         public Address AddAddress(AddressDTO Address) { 
             return addresseservice.AddAddress(Address);
         }
-        [HttpDelete("{email}")]
+        [HttpDelete("{id}")]
         public bool DeleteAddress(int id)
         {
             return addresseservice.DeleteAddress(id);

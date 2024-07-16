@@ -28,7 +28,7 @@ namespace DAL.Implementation
 
         public bool DeleteDrive(int id)
         {
-            foreach (var drive in context.Drives)
+            foreach (var drive in context.Drives.ToList())
             {
                 if (drive.TravelId == id)
                 {

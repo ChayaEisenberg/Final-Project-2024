@@ -26,7 +26,7 @@ namespace DAL.Implementation
 
         public bool DeleteAddress(int id)
         {
-            foreach (var Address in context.Addresses)
+            foreach (var Address in context.Addresses.ToList())
             {
                 if (Address.AddressId == id)
                 {

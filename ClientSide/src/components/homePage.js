@@ -11,14 +11,23 @@ export default function HomePage() {
   const navigate = useNavigate();
 
   const handleNewDriveClick = () => {
-    navigate('/newdrive');
+    navigate('/newDrive');
+  };
+
+  const handleRemoveDriveClick = () => {
+    navigate('/removeDrive');
   };
 
   return (
     <div className="home-page">
-      <br />
+
       <Button variant="primary" className="publish-button" onClick={handleNewDriveClick}>
         <FaCar />  publish your trip
+      </Button>
+      <br></br>
+      <br></br>
+      <Button variant="primary" className="publish-button" onClick={handleRemoveDriveClick}>
+        <FaCar />  delete trip
       </Button>
       <br></br>
       <br></br>

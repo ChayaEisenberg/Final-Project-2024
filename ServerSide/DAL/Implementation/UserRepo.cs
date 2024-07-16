@@ -25,7 +25,7 @@ namespace DAL.Implementation
 
         public bool DeleteUser(string email)
         {
-            foreach (var user in context.Users)
+            foreach (var user in context.Users.ToList())
             {
                 if (user.Email == email)
                 {
