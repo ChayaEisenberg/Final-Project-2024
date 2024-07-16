@@ -59,8 +59,7 @@ export default function NewDrive() {
             console.error('There was an error submitting the form!', error);
         }
     };
-
-    const handleSubmit = async (e) => {
+    const postDrive = async(e) => {
         e.preventDefault();
         const startingPointId = await postAddress(startingPoint);
         const destinationPointId = await postAddress(destinationPoint);
@@ -79,9 +78,20 @@ export default function NewDrive() {
         try {
             const response = await axios.post('http://localhost:5055/api/drives', newDrive);
             console.log('Form data submitted:', response.data);
+            return response.data;
         } catch (error) {
             console.error('There was an error submitting the form!', error);
         }
+    }
+    const successMessage = async(e)=> {
+        const newDrive = await postDrive(e);
+        alert("Drive created successfully!" + " your drive code is: " + newDrive.travelId+ 
+        " save it, if you want to delete this drive later");
+    }
+    
+    const handleSubmit = async (e) => {
+        await successMessage(e)
+        
         navigateToHomePage();
     };
 

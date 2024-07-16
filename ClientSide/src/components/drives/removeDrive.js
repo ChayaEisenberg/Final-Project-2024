@@ -5,7 +5,8 @@ import '../../App.css';
 
 export default function RemoveDrive() {
     const [form, setForm] = useState({
-        carOwner: '',
+        userName: '',
+        password: '',
         driveId: '',
     });
 
@@ -62,24 +63,36 @@ export default function RemoveDrive() {
         <div className="form-container">
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label htmlFor="carOwner">Car Owner:</label>
+                    <label htmlFor="userName">User Name:</label>
                     <input
                         type="text"
                         className="form-control"
-                        id="carOwner"
-                        name="carOwner"
-                        value={form.carOwner}
+                        id="userName"
+                        name="userName"
+                        value={form.userName}
                         onChange={handleChange}
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="driveId">Drive ID:</label>
+                    <label htmlFor="password">Password:</label>
+                    <input
+                        type="password"
+                        className="form-control"
+                        id="password"
+                        name="password"
+                        value={form.password}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="driveId">Drive Code:</label>
                     <input
                         type="text"
                         className="form-control"
                         id="driveId"
                         name="driveId"
                         value={form.driveId}
+                        placeholder='you got this code when you created your drive'
                         onChange={handleChange}
                     />
                 </div>
