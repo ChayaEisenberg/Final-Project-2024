@@ -37,6 +37,10 @@
     transform: rotate(360deg);
   }
 }
+.card{
+  border-radius: 0 !important;
+  border: 0 !important;
+}
 
 .card-custom {
   background-color: #D9FFCC;
@@ -88,7 +92,7 @@
 
 .card-custom .location-icons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   color: #8518FF;
   align-items: center;
   margin-top: 10px;
@@ -105,7 +109,9 @@
   background-color: #8518FF !important;
   color: #FFFFFF !important;
 }
-
+svg {
+  padding: 5%;
+}
 .search-input {
   background-color: #D9FFCC;
   width: 50%;
