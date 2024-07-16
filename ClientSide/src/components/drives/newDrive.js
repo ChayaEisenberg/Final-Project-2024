@@ -82,6 +82,7 @@ export default function NewDrive() {
         } catch (error) {
             console.error('There was an error submitting the form!', error);
         }
+        navigateToHomePage();
     };
 
     return (
@@ -143,7 +144,7 @@ export default function NewDrive() {
                         </div>
                     </div>
                 </div>
-                <button type="submit" className="btn-primary" onClick={navigateToHomePage}>Submit</button>
+                <button type="submit" className="btn-primary" >Submit</button>
             </form>
         </div>
     );
