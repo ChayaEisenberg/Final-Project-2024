@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../App.css';
 
 export default function RemoveDrive() {
+    const navigate = useNavigate();
+
+    const navigateToHomePage = () => {
+        navigate('/');
+      };
+
     const [form, setForm] = useState({
         userName: '',
         password: '',
@@ -17,19 +24,8 @@ export default function RemoveDrive() {
             [name]: value,
         });
     };
-
-    const deleteAddress = async (addressId) => {
-        try {
-            const response = await axios.delete(`http://localhost:5055/api/addresses/${addressId}`);
-            console.log('Address deleted:', response.data);
-            return true;
-        } catch (error) {
-            console.error('There was an error deleting the address!', error);
-            return false;
-        }
-    };
-
-    const deleteDrive = async (driveId) => {
+    const deleteDrive = async (driveId) => {      
+        
         try {
             const response = await axios.delete(`http://localhost:5055/api/drives/${driveId}`);
             console.log('Drive deleted:', response.data);
@@ -39,24 +35,15 @@ export default function RemoveDrive() {
             return null;
         }
     };
+    const successMessage = async()=> {
+        await deleteDrive(form.driveId);
+        alert("Drive deleted successfully");
+    }
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        const drive = await deleteDrive(form.driveId);
-
-        if (drive) {
-            if (drive.carOwner !== form.carOwner) {
-                console.error('Car owner does not match the drive ID');
-                return;
-            }
-
-            await deleteAddress(drive.startingPoint);
-            await deleteAddress(drive.destinationPoint);
-
-            console.log('Drive and associated addresses deleted successfully');
-        } else {
-            console.error('Drive not found or failed to delete');
-        }
+        e.preventDefault();         
+         await successMessage()
+         navigateToHomePage();
     };
 
     return (

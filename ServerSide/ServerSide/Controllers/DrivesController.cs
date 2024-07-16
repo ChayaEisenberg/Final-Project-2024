@@ -23,7 +23,7 @@ namespace ServerSide.Controllers
 
         }
        
-        [HttpPut("{email}")]
+        [HttpPut("{id}")]
         public Drive UpdateDrive(int id, Drive drive)
         {
             return driveService.UpdateDrive(id, drive);
@@ -33,7 +33,7 @@ namespace ServerSide.Controllers
         {
             return driveService.AddDrive(drive) ;
         }
-        [HttpDelete("{email}")]
+        [HttpDelete("{id}")]
         public bool DeleteDrive(int id)
         {
             return driveService.DeleteDrive(id);

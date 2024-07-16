@@ -29,6 +29,7 @@ namespace פרוייקט_סופי.controllers
         {
             return userService.GetUserByEmail(email);
         }
+
         [HttpPut("{email}")]
         public User UpdateUser(string email, UserDTO user)
         {

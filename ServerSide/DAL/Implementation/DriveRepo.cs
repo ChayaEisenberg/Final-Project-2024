@@ -28,14 +28,12 @@ namespace DAL.Implementation
 
         public bool DeleteDrive(int id)
         {
-            foreach (var drive in context.Drives.ToList())
+            var drive = context.Drives.FirstOrDefault(d => d.TravelId == id);
+            if (drive != null)
             {
-                if (drive.TravelId == id)
-                {
-                    context.Drives.Remove(drive);
-                    context.SaveChanges();
-                    return true;
-                }
+                context.Drives.Remove(drive);
+                context.SaveChanges();
+                return true;
             }
             return false;
         }
