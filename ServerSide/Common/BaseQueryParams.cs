@@ -17,6 +17,7 @@ namespace Common
             set {if(value > 0 && value < MAX_PAGE_SIZE) pageSize = value; }
         }
 
+        
 
 
     }
