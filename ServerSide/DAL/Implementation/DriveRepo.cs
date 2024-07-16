@@ -44,19 +44,14 @@ namespace DAL.Implementation
         public PagedList<Drive> GetAllDrives(BaseQueryParams queryParams)
         {
             var queryable = context.Drives.AsQueryable()
+                .Where(d => d.NumberOfPassengers >= queryParams.Passengers)
                 .Include(drive => drive.DestinationPointNavigation)
                 .Include(d => d.StartingPointNavigation)
                 .Include(d => d.CarOwnerNavigation);
-            return PagedList<Drive>            
+            return PagedList<Drive>
                 .ToPagedList(queryable, queryParams.PageNumber, queryParams.PageSize);
-
-
         }
 
-        public PagedList<Drive> GetAllDrives()
-        {
-            throw new NotImplementedException();
-        }
 
         public User UpdateDrive(string email, User user)
         {

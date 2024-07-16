@@ -4,7 +4,6 @@ using BL;
 using DAL.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using DataAccessLayer;
 using Common;
 
 namespace ServerSide.Controllers
@@ -19,7 +18,7 @@ namespace ServerSide.Controllers
             this.driveService = blManeger.drive;
         }
         [HttpGet]
-        public PagedList<Drive> GetAllDrives([FromQuery] BaseQueryParams queryParams)
+        public List<Drive> GetAllDrives([FromQuery] BaseQueryParams queryParams)
         {
             return driveService.GetAllDrives(queryParams);
 
